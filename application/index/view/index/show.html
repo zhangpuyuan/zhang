@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>展示</title>
+</head>
+<body>
+	<center>
+		<table border="1">
+			<tr>
+				<td>作者</td>
+				<td>标题</td>
+				<td>文章内容</td>
+				<td>操作</td>
+			</tr>
+			{volist name="t_sql" id="v"}
+			<tr>
+				<td>{$v.name}</td>
+				<td>{$v.title}</td>
+				<td>{$v.textarea}</td>
+				<td>
+				<a href="{:url('delete')}?id={$v.id}">删除</a>
+				<a href="{:url('updata')}?id={$v.id}">修改</a>
+				</td>
+			</tr>
+			{/volist}
+		</table>
+				{$page}
+	</center>
+</body>
+</html>
